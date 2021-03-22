@@ -7,15 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// this class applies user's edits to the database
+// this class applies user's edits in the ap_applicant table to the database
 namespace RightJob.DAL
 {
-    class ApplicantManager
+    public class ApplicantManager : DbManager // Inheritance where DbManager is a superclass
     {
         // when user will be adding a new applicant
         public void Create(Applicant a)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
                 var sql = $"INSERT INTO ap_applicant (ap_name_10671, ap_score_10671) VALUES ('{a.Name}', {a.Score})";
@@ -42,7 +42,7 @@ namespace RightJob.DAL
         // when user will be updating an applicant
         public void Update(Applicant a)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
                 var sql = $@"
@@ -50,7 +50,7 @@ UPDATE ap_applicant SET
     ap_name_10671 = '{a.Name}', 
     ap_score_10671 = '{a.Score}',
     ap_tests_taken_10671 = '{a.TestsTaken}'
-WHERE Id = {a.Id}";
+WHERE ap_id_10671 = {a.Id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -72,10 +72,10 @@ WHERE Id = {a.Id}";
         // when user will be deleting an applicant
         public void Delete(int id)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
-                var sql = $"DELETE FROM ap_applicant WHERE Id = {id}";
+                var sql = $"DELETE FROM ap_applicant WHERE ap_id_10671 = {id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -96,10 +96,10 @@ WHERE Id = {a.Id}";
         // shows a particular user from the database
         public Applicant GetById(int id)
         {
-            var connection = new SqlCeConnection("") ;
+            var connection = Connection ;
             try
             {
-                var sql = $"SELECT ap_id_10671, ap_name_10671, ap_score_10671, ap_tests_taken_10671 FROM ap_applicant WHERE ID = {id}";
+                var sql = $"SELECT ap_id_10671, ap_name_10671, ap_score_10671, ap_tests_taken_10671 FROM ap_applicant WHERE ap_id_10671 = {id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
@@ -129,7 +129,7 @@ WHERE Id = {a.Id}";
         // shows the entire list of applicants from the database
         public List<Applicant> GetAll()
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             var result = new List<Applicant>();
             try
             {

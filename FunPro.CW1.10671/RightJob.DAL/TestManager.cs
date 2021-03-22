@@ -7,14 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// this class applies user's edits in the ts_table table to the database
 namespace RightJob.DAL
 {
-    class TestManager
+    public class TestManager : DbManager  // Inheritance where DbManager is a superclass
     {
         // when user will be adding a new test
         public void Create(TestName t)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
                 var sql = $@"
@@ -44,7 +45,7 @@ VALUES ('{t.Name}', '{t.Question1}', '{t.Answer1}', '{t.Question2}', '{t.Answer2
         // when user will be updating a test
         public void Update(TestName t)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
                 var sql = $@"
@@ -56,7 +57,7 @@ UPDATE ts_test SET
     ts_q2_answer_10671 = '{t.Answer2}',
     ts_q3_10671 = '{t.Question3}',
     ts_q3_answer_10671 = '{t.Answer3}',
-WHERE Id = {t.Id}";
+WHERE ts_id_10671 = {t.Id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -75,13 +76,13 @@ WHERE Id = {t.Id}";
             }
         }
 
-        // when user will be deleting an applicant
+        // when user will be deleting a test
         public void Delete(int id)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
-                var sql = $"DELETE FROM ts_test WHERE Id = {id}";
+                var sql = $"DELETE FROM ts_test WHERE ts_id_10671 = {id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -102,12 +103,12 @@ WHERE Id = {t.Id}";
         // shows a particular test from the database
         public TestName GetById(int id)
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             try
             {
                 var sql = $@"
 SELECT ts_name_10671, ts_q1_10671, ts_q1_answer_10671, ts_q2_10671, ts_q2_answer_10671, ts_q3_10671, ts_q3_answer_10671
-FROM ts_test WHERE ID = {id}";
+FROM ts_test WHERE ts_id_10671 = {id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
@@ -130,18 +131,18 @@ FROM ts_test WHERE ID = {id}";
                 }
             }
 
-            // if compiler gets here, means the program couldn't find an applicant. something went wrong
+            // if compiler gets here, means the program couldn't find a test. something went wrong
             return null;
         }
 
         // shows the entire list of tests from the database
         public List<TestName> GetAll()
         {
-            var connection = new SqlCeConnection("");
+            var connection = Connection;
             var result = new List<TestName>();
             try
             {
-                var sql = "SELECT ts_name_10671, ts_q1_10671, ts_q1_answer_10671, ts_q2_10671, ts_q2_answer_10671, ts_q3_10671, ts_q3_answer_10671";
+                var sql = "SELECT ts_id_10671, ts_name_10671, ts_q1_10671, ts_q1_answer_10671, ts_q2_10671, ts_q2_answer_10671, ts_q3_10671, ts_q3_answer_10671 FROM ts_test";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
@@ -173,13 +174,13 @@ FROM ts_test WHERE ID = {id}";
             var t = new TestName
             {
                 Id = Convert.ToInt32(reader.GetValue(0)),
-                Name = reader.GetValue(1).ToString(),
-                Question1 = reader.GetValue(2).ToString(),
-                Answer1 = reader.GetValue(3).ToString(),
-                Question2 = reader.GetValue(4).ToString(),
-                Answer2 = reader.GetValue(5).ToString(),
-                Question3 = reader.GetValue(6).ToString(),
-                Answer3 = reader.GetValue(7).ToString(),
+                Name = Convert.ToString(reader.GetValue(1)),
+                Question1 = Convert.ToString(reader.GetValue(2)),
+                Answer1 = Convert.ToString(reader.GetValue(3)),
+                Question2 = Convert.ToString(reader.GetValue(4)),
+                Answer2 = Convert.ToString(reader.GetValue(5)),
+                Question3 = Convert.ToString(reader.GetValue(6)),
+                Answer3 = Convert.ToString(reader.GetValue(7)),
             };
 
             return t;

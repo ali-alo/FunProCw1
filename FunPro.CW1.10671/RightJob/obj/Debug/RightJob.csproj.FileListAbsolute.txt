@@ -7,4 +7,10 @@ C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\c
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.csproj.CoreCompileInputs.cache
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.exe
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.pdb
-C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.Form1.resources
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.ParentForm.resources
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\RightJob.DAL.dll
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\RightJob.DAL.pdb
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\RightJob.DAL.dll.config
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.csproj.CopyComplete
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\RightJob.sdf

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RightJob.DAL
 {
-    class Applicant
+    public class Applicant
     {
         public int Id { get; set; }
         public string Name { get; set; }
