@@ -25,6 +25,8 @@ namespace RightJob.DAL
                     return result;
                 case ByAttribute.Score:
                     result.Sort(new ByScoreComparer());
+                    // I think it is better to display scores from top to bottom (highest marks on top), that's why list method .Reverse()
+                    result.Reverse();
                     return result;
             }
 
@@ -53,22 +55,11 @@ namespace RightJob.DAL
         }
 
         // smart searching 
-        public List<Applicant> Search(string value, ByAttribute attribute)
+        public List<Applicant> Search(string value)
         {
+            // cheking for both lower and uppercased letters
+            return GetAllApplicants().Where(a => a.Name.ToUpper().Contains(value.ToUpper())).ToList();
 
-            switch (attribute)
-            {
-                // if user's searching based on the applicants names
-                case ByAttribute.Name:
-                    // cheking for both lower and uppercased letters
-                    return GetAllApplicants().Where(a => a.Name.ToUpper().Contains(value.ToUpper())).ToList();
-                // if user's searching based on the tests applicants have taken
-                case ByAttribute.TestsTaken:
-                    return GetAllApplicants().Where(a => a.TestsTaken.ToUpper().Contains(value.ToUpper())).ToList();
-            }
-
-            //if compiler gets here, searching failed, something went wrong
-            return null;
         }
     }
 }

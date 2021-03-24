@@ -23,9 +23,15 @@ namespace RightJob
             Close();
         }
 
-        private void ParentForm_Load(object sender, EventArgs e)
+        private void allApplicantsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(new ApplicantList().GetAllApplicants().Count.ToString());
+            MyForms.GetForm<ApplicantListForm>().Show();
+        }
+
+        private void allTestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyForms.GetForm<TestListForm>().Show();
+
         }
     }
 }

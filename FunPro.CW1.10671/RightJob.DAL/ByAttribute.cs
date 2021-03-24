@@ -10,7 +10,6 @@ namespace RightJob.DAL
     public enum ByAttribute
     {
         Name,
-        Score,
-        TestsTaken
+        Score
     }
 }

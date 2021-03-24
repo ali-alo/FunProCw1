@@ -66,7 +66,7 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -82,14 +82,15 @@
             // newApplicantToolStripMenuItem
             // 
             this.newApplicantToolStripMenuItem.Name = "newApplicantToolStripMenuItem";
-            this.newApplicantToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.newApplicantToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newApplicantToolStripMenuItem.Text = "New applicant";
             // 
             // allApplicantsToolStripMenuItem
             // 
             this.allApplicantsToolStripMenuItem.Name = "allApplicantsToolStripMenuItem";
-            this.allApplicantsToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.allApplicantsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.allApplicantsToolStripMenuItem.Text = "All applicants";
+            this.allApplicantsToolStripMenuItem.Click += new System.EventHandler(this.allApplicantsToolStripMenuItem_Click);
             // 
             // testsToolStripMenuItem
             // 
@@ -109,8 +110,9 @@
             // allTestsToolStripMenuItem
             // 
             this.allTestsToolStripMenuItem.Name = "allTestsToolStripMenuItem";
-            this.allTestsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.allTestsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.allTestsToolStripMenuItem.Text = "All tests";
+            this.allTestsToolStripMenuItem.Click += new System.EventHandler(this.allTestsToolStripMenuItem_Click);
             // 
             // takeTestToolStripMenuItem
             // 
@@ -130,7 +132,6 @@
             this.Name = "ParentForm";
             this.Text = "RightJob";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ParentForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
