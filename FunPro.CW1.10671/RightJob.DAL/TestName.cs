@@ -100,9 +100,9 @@ namespace RightJob.DAL
         }
 
         // to show the names of courses taken on the user end
-        //public override string ToString()
-        //{
-        //    return Name;
-        //}
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

@@ -25,11 +25,6 @@ namespace RightJob
             LoadData();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
         public void LoadData()
         {
             // nullify the data first, and after that get all the applicants using RightJob.DAL classes
@@ -78,6 +73,13 @@ namespace RightJob
                 new TestManager().Delete(t.Id);
                 LoadData();
             }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            LoadData();
+            // empty the search field
+            tbxSearch.Text = "";
         }
     }
 }

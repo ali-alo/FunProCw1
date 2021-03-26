@@ -28,6 +28,8 @@ namespace RightJob
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
+            // empty the search field
+            tbxSearch.Text = "";
         }
 
         public void LoadData()
@@ -84,6 +86,29 @@ namespace RightJob
             {
                 var a = (Applicant)dgv.SelectedRows[0].DataBoundItem;
                 new ApplicantEditForm().UpdateApplicant(a);
+            }
+        }
+
+        private void btnTakeTest_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Select an applicant who is going for a test");
+            else
+            {
+                var a = (Applicant)dgv.SelectedRows[0].DataBoundItem;
+                new TakeTestForm().LoadForm(a);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Please select an applicant");
+            else
+            {
+                var a = (Applicant)dgv.SelectedRows[0].DataBoundItem;
+                new ApplicantManager().Delete(a.Id);
+                LoadData();
             }
         }
     }

@@ -44,5 +44,12 @@ namespace RightJob
             var form = new ApplicantEditForm();
             form.CreateNewApplicant();
         }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To take test please select an applicant who is going for a test \n\nAfter that on the right-bottom corner press on 'Take Test' button.");
+            MyForms.GetForm<ApplicantListForm>().Show();
+
+        }
     }
 }

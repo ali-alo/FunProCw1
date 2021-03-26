@@ -122,6 +122,7 @@
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
             this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.takeTestToolStripMenuItem.Text = "Take test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
             // ParentForm
             // 

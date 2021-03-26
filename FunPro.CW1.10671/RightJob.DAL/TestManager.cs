@@ -107,7 +107,7 @@ WHERE ts_id_10671 = {t.Id}";
             try
             {
                 var sql = $@"
-SELECT ts_name_10671, ts_q1_10671, ts_q1_answer_10671, ts_q2_10671, ts_q2_answer_10671, ts_q3_10671, ts_q3_answer_10671
+SELECT ts_id_10671, ts_name_10671, ts_q1_10671, ts_q1_answer_10671, ts_q2_10671, ts_q2_answer_10671, ts_q3_10671, ts_q3_answer_10671
 FROM ts_test WHERE ts_id_10671 = {id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();

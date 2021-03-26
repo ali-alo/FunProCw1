@@ -42,7 +42,7 @@ namespace RightJob
             Show();
         }
 
-        public void UpdateApplicant(DAL.Applicant applicant)
+        public void UpdateApplicant(Applicant applicant)
         {
             Mode = FormMode.Update;
             Applicant = applicant;
