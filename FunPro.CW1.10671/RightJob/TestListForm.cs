@@ -19,12 +19,18 @@ namespace RightJob
             LoadData();
         }
 
+        private void TestListForm_Load(object sender, EventArgs e)
+        {
+            MdiParent = MyForms.GetForm<ParentForm>();
+            LoadData();
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             // nullify the data first, and after that get all the applicants using RightJob.DAL classes
             dgv.DataMember = "";
@@ -42,6 +48,35 @@ namespace RightJob
                 dgv.DataMember = "";
                 dgv.DataSource = null;
                 dgv.DataSource = new TestList().Search(tbxSearch.Text);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var form = new TestEditForm();
+            form.CreateNewTest();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Please select a test");
+            else
+            {
+                var t = (TestName)dgv.SelectedRows[0].DataBoundItem;
+                new TestEditForm().UpdateTest(t);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Please select a test");
+            else
+            {
+                var t = (TestName)dgv.SelectedRows[0].DataBoundItem;
+                new TestManager().Delete(t.Id);
+                LoadData();
             }
         }
     }

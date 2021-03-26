@@ -46,12 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicantEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicantEditForm.Designer.cs">
+      <DependentUpon>ApplicantEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicantListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicantListForm.Designer.cs">
       <DependentUpon>ApplicantListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMode.cs" />
     <Compile Include="MyForms.cs" />
     <Compile Include="ParentForm.cs">
       <SubType>Form</SubType>
@@ -61,12 +68,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestEditForm.Designer.cs">
+      <DependentUpon>TestEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TestListForm.Designer.cs">
       <DependentUpon>TestListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicantEditForm.resx">
+      <DependentUpon>ApplicantEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicantListForm.resx">
       <DependentUpon>ApplicantListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +98,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestEditForm.resx">
+      <DependentUpon>TestEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestListForm.resx">
       <DependentUpon>TestListForm.cs</DependentUpon>
     </EmbeddedResource>

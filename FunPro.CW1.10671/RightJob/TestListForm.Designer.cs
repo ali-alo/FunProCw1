@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.testNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.question1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +38,7 @@
             this.answer2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.question3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.answer3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -77,10 +77,6 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1730, 422);
             this.dgv.TabIndex = 0;
-            // 
-            // testNameBindingSource
-            // 
-            this.testNameBindingSource.DataSource = typeof(RightJob.DAL.TestName);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -154,6 +150,10 @@
             this.answer3DataGridViewTextBoxColumn.ReadOnly = true;
             this.answer3DataGridViewTextBoxColumn.Width = 125;
             // 
+            // testNameBindingSource
+            // 
+            this.testNameBindingSource.DataSource = typeof(RightJob.DAL.TestName);
+            // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -175,6 +175,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -186,6 +187,7 @@
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -197,6 +199,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -244,6 +247,7 @@
             this.Controls.Add(this.dgv);
             this.Name = "TestListForm";
             this.Text = "Tests";
+            this.Load += new System.EventHandler(this.TestListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testNameBindingSource)).EndInit();
             this.ResumeLayout(false);

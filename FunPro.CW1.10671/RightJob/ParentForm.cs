@@ -31,7 +31,18 @@ namespace RightJob
         private void allTestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MyForms.GetForm<TestListForm>().Show();
+        }
 
+        private void createTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TestEditForm();
+            form.CreateNewTest();
+        }
+
+        private void newApplicantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new ApplicantEditForm();
+            form.CreateNewApplicant();
         }
     }
 }

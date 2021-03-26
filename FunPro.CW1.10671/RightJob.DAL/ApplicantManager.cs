@@ -18,7 +18,7 @@ namespace RightJob.DAL
             var connection = Connection;
             try
             {
-                var sql = $"INSERT INTO ap_applicant (ap_name_10671, ap_score_10671) VALUES ('{a.Name}', {a.Score})";
+                var sql = $"INSERT INTO ap_applicant (ap_name_10671, ap_score_10671, ap_tests_taken_10671) VALUES ('{a.Name}', {a.Score}, '{a.TestsTaken}')";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();
                 // we don't expect any data to come back,that's why ExecuteNonQuerry()

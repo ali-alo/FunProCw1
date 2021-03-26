@@ -56,7 +56,7 @@ UPDATE ts_test SET
     ts_q2_10671 = '{t.Question2}',
     ts_q2_answer_10671 = '{t.Answer2}',
     ts_q3_10671 = '{t.Question3}',
-    ts_q3_answer_10671 = '{t.Answer3}',
+    ts_q3_answer_10671 = '{t.Answer3}'
 WHERE ts_id_10671 = {t.Id}";
                 var command = new SqlCeCommand(sql, connection);
                 connection.Open();

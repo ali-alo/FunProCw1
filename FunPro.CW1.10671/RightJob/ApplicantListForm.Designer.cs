@@ -126,6 +126,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -137,6 +138,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgv
             // 
@@ -242,6 +244,7 @@
             this.Controls.Add(this.dgv);
             this.Name = "ApplicantListForm";
             this.Text = "ApplicantListForm";
+            this.Load += new System.EventHandler(this.ApplicantListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).EndInit();
             this.ResumeLayout(false);

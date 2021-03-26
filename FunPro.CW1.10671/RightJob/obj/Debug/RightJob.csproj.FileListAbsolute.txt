@@ -16,3 +16,5 @@ C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\c
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\bin\Debug\RightJob.sdf
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.ApplicantListForm.resources
 C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.TestListForm.resources
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.TestEditForm.resources
+C:\Users\ASus\Documents\WIUT study 2020 2 semester\fundamentals_of_programming\cw1\FunPro.CW1.10671\RightJob\obj\Debug\RightJob.ApplicantEditForm.resources

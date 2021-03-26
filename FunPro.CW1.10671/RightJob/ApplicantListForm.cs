@@ -19,12 +19,18 @@ namespace RightJob
             LoadData();
         }
 
+        private void ApplicantListForm_Load(object sender, EventArgs e)
+        {
+            MdiParent = MyForms.GetForm<ParentForm>();
+            LoadData();
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             // nullify the data first, and after that get all the applicants using RightJob.DAL classes
             dgv.DataMember = "";
@@ -61,6 +67,23 @@ namespace RightJob
                 dgv.DataMember = "";
                 dgv.DataSource = null;
                 dgv.DataSource = new ApplicantList().Search(tbxSearch.Text);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var form = new ApplicantEditForm();
+            form.CreateNewApplicant();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+                MessageBox.Show("Select an applicant");
+            else
+            {
+                var a = (Applicant)dgv.SelectedRows[0].DataBoundItem;
+                new ApplicantEditForm().UpdateApplicant(a);
             }
         }
     }

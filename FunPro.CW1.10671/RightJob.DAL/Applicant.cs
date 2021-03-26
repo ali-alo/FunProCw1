@@ -9,27 +9,25 @@ namespace RightJob.DAL
     public class Applicant
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new Exception("Enter applicant's name");
+                _name = value;
+            }
+        }
+        
+        // nud properties do not allow user to set inappropriate values, so no need to user extra recourses on validation here
         public int Score { get; set; }
         public string TestsTaken { get; set; }
-
-        public Applicant(string name)
-        {
-            Name = name;
-            Score = 0;
-            TestsTaken = "";
-        }
 
         public Applicant()
         {
 
-        }
-
-        public Applicant(string name, int score, string testsTaken)
-        {
-            Name = name;
-            Score = score;
-            TestsTaken = testsTaken;
         }
     }
 }
